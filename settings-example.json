@@ -1,0 +1,42 @@
+{
+    "modules": [ {
+            "__module": "wifi",
+            "__class": "Wifi",
+            "__instance": "wifi",
+            "settings": {
+                "ssid": "My WiFi",
+                "psk": "my cryptic wifi password",
+                "timer_id": 1,
+                "timer_interval": 500
+            }
+        }, {
+            "__module": "mqtt",
+            "__class": "Mqtt",
+            "__instance": "mqtt",
+            "settings": {
+                "client_name": "carpark",
+                "server_ip": "192.168.1.1",
+                "server_port": 0,
+                "timer_id": 4,
+                "subscription_poll_time": 500
+            }
+        }, {
+            "__module": "carsensor",
+            "__class": "CarSensor",
+            "__instance": "carsensor",
+            "settings": {
+                "trig_pin": 23,
+                "echo_pin": 22,
+                "distance_threshold": 100
+            }
+        }, {
+            "__module": "deepsleep",
+            "__class": "DeepSleep",
+            "__instance": "deepsleep",
+            "settings": {
+                "disable_autosleep": false,
+                "wakeup_after": 10000
+            }
+        }
+    ]
+}
