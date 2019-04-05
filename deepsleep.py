@@ -7,9 +7,9 @@ class DeepSleep(Module):
         super().__init__(*args, **kwargs)
 
     def go_sleep(self):
+        self.parent.call_callbacks("before_deepsleep_callback")
         machine.deepsleep(self.settings["wakeup_after"])
 
     def mqtt_on_connect_callback(self, **kwargs):
         if self.settings["disable_autosleep"] == False:
-            self.parent.call_callbacks("before_deepsleep_callback")
             self.go_sleep()
